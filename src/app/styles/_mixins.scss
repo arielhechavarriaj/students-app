@@ -1,0 +1,7 @@
+@mixin rem-font-sizes($sizes) {
+  @each $selector, $size in $sizes {
+    #{$selector} {
+      font-size: $size * 1rem;
+    }
+  }
+}
