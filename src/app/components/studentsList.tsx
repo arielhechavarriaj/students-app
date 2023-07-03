@@ -14,6 +14,7 @@ import EditBtn from "@/app/components/editBtn";
 import {BiEdit, BiEditAlt} from "react-icons/bi";
 import {FaUserEdit} from "react-icons/fa";
 import {MdGroupRemove} from "react-icons/md";
+import editStudent from "@/app/students/editStudent/[id]/page";
 
 export default function StudentsList() {
     let data: any[] = [{
@@ -39,7 +40,7 @@ export default function StudentsList() {
                         Delete</button>
 
                     <Link className={'add-button'}
-                          href={'/addStudent'}
+                          href={'/students/addStudent'}
                     >
                         <AiOutlineUserAdd size={24}/>
                         Add New Student
@@ -73,7 +74,7 @@ export default function StudentsList() {
                             <div className={'button-actions'}>
                                 <RemoveBtn/>
 
-                                <Link target={'_blank'} href="https://github.com/leiraStudio/radioCuba" style={{textDecoration:'none', paddingTop:5+'px'}} ><FaUserEdit size={24} color={'#375280'}/></Link>
+                                <Link href="/students/editStudent/123" style={{textDecoration:'none', paddingTop:5+'px'}} ><FaUserEdit size={24} color={'#375280'}/></Link>
 
                             </div>
                         </td>
