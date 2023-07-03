@@ -192,4 +192,40 @@ table {
   border-color: #337ab7;
 }
 
+.container-form{
+  display: grid;
+place-items: center;
+
+//  grid-template-rows:25px auto;
+}
+
+form{
+  background-color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+  padding: 15px;
+
+ width: 25rem;
+  display: grid;
+  grid-auto-columns: auto;
+  grid-template-rows: repeat(5,2.7rem);
+  grid-gap: 10px;
+p{
+  font-size: large;
+  font-weight: 700;
+}
+  input{
+border-color: transparent;
+    border-bottom-color: $primary-color;
+    color: whitesmoke;
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
+  }
+  button{
+    background: $primary-color;
+    color: whitesmoke;
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
+  }
+
+}
 
