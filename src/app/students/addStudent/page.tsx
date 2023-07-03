@@ -33,7 +33,7 @@ const [grade,setGrade]=useState("")
             router.push("/")
         }
         else{
-            throw new Error("Failed to create a topic")
+            throw new Error("Failed to create a Student")
         }
     }
     catch (e) {
