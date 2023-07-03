@@ -6,7 +6,7 @@ import {useState} from "react";
 import {useRouter} from "next/navigation";
 
 
-export default function addStudent() {
+export default function AddStudent() {
 const [first_name,setFirstName]=useState("")
 const [last_name,setLastName]=useState("")
 const [email,setEmail]=useState("")

@@ -17,9 +17,9 @@ export default function Navbar() {
                    </Link>
            </span>
             <span>
-            <Link href="/about/me" style={{textDecoration:'none', paddingLeft:10+'px'}} ><RxPerson size={24} color={'#375280'}/></Link>
-            <Link href="/about/task" style={{textDecoration:'none',  paddingLeft:10+'px'}} ><BiTask size={24} color={'#375280'}/></Link>
-            <Link target={'_blank'} href="https://github.com/leiraStudio/radioCuba" style={{textDecoration:'none', paddingLeft:10+'px'}} ><BsGithub size={24} color={'#375280'}/></Link>
+            {/*<Link href="/about/me" style={{textDecoration:'none', paddingLeft:10+'px'}} ><RxPerson size={24} color={'#375280'}/></Link>*/}
+            {/*<Link href="/about/task" style={{textDecoration:'none',  paddingLeft:10+'px'}} ><BiTask size={24} color={'#375280'}/></Link>*/}
+            <Link target={'_blank'} href="https://github.com/leiraStudio/students-app" style={{textDecoration:'none', paddingLeft:10+'px'}} ><BsGithub size={24} color={'#375280'}/></Link>
             </span>
     </div>
 

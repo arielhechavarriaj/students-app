@@ -37,12 +37,8 @@ throw  new Error('Failed to load students')
 
 
 export default async function StudentsList() {
-    let students=[]
-students  = await getStudents();
+const students  = await getStudents();
 
-
-    // @ts-ignore
-    // @ts-ignore
     return (
 
         <section className={'container-table'}>
@@ -80,7 +76,7 @@ students  = await getStudents();
                 <tbody>
 
 
-              {students.map((student:any) => (<tr key={student.id}>
+              {students.map((student:any) => <tr key={student.id}>
                     <th><input name="select_" value="1" type="checkbox" checked={student.selected}/></th>
 
                         <td>{student.first_name}</td>
@@ -96,7 +92,7 @@ students  = await getStudents();
 
                             </div>
                         </td>
-                    </tr>))}
+                    </tr>) }
 
                 </tbody>
             </table>
