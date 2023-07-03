@@ -5,16 +5,20 @@ import {HiPencilAlt} from "react-icons/hi";
 import {router} from "next/client";
 import {RiDeleteBin6Fill} from "react-icons/ri";
 import {AiOutlineDelete, AiOutlineEdit, AiOutlineUserAdd} from "react-icons/ai";
-import {BsSearch} from "react-icons/bs";
+import {BsDice1, BsGithub, BsSearch} from "react-icons/bs";
 import Input
     from "@react-buddy/ide-toolbox/dist/previews/tools-panel/props-edit-table/table-items/table-item/table-item-control/input";
 import {CiEdit} from "react-icons/ci";
 import {LiaUserEditSolid} from "react-icons/lia";
 import EditBtn from "@/app/components/editBtn";
+import {BiEdit, BiEditAlt} from "react-icons/bi";
+import {FaUserEdit} from "react-icons/fa";
+import {MdGroupRemove} from "react-icons/md";
 
 export default function StudentsList() {
     let data: any[] = [{
         id: 0,
+        selected:false,
         first_name: 'joe',
         last_name: 'frext',
         email: 'joeFrext@gmail.comjoeFrext@gmail.com',
@@ -31,20 +35,23 @@ export default function StudentsList() {
 
                 <div className={'button-container'}>
                     <button className={'delete-button'}>
-                        <AiOutlineDelete size={24} />
+                        <MdGroupRemove size={24} style={{marginRight:5+'px'}} />
                         Delete</button>
 
-                    <button className={'add-button'}
+                    <Link className={'add-button'}
+                          href={'/addStudent'}
                     >
                         <AiOutlineUserAdd size={24}/>
                         Add New Student
-                    </button>
+                    </Link>
                 </div>
             </div>
 
             <table>
                 <thead>
                 <tr>
+                    <th><input name="select_all" value="1" type="checkbox"/></th>
+
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
@@ -55,6 +62,8 @@ export default function StudentsList() {
                 </thead>
                 <tbody>
                 {data.map((student) => (<tr key={student.id}>
+                    <th><input name="select_" value="1" type="checkbox" checked={student.selected}/></th>
+
                         <td>{student.first_name}</td>
                         <td>{student.last_name}</td>
                         <td>{student.email}</td>
@@ -63,7 +72,9 @@ export default function StudentsList() {
                         <td>
                             <div className={'button-actions'}>
                                 <RemoveBtn/>
-                            <EditBtn/>
+
+                                <Link target={'_blank'} href="https://github.com/leiraStudio/radioCuba" style={{textDecoration:'none', paddingTop:5+'px'}} ><FaUserEdit size={24} color={'#375280'}/></Link>
+
                             </div>
                         </td>
                     </tr>))}
