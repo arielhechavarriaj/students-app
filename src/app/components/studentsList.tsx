@@ -90,7 +90,7 @@ students  = await getStudents();
                         <td>{student.grade}</td>
                         <td>
                             <div className={'button-actions'}>
-                                <RemoveBtn/>
+                                <RemoveBtn id={student._id} />
 
                                 <Link href={`/students/editStudent/${student._id}`} style={{textDecoration:'none', paddingTop:5+'px'}} ><FaUserEdit size={24} color={'#375280'}/></Link>
 
