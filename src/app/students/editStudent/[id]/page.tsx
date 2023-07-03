@@ -1,4 +1,3 @@
-import EditBtn from "@/app/components/editBtn";
 import EditStudentForm from "@/app/components/editStudentForm";
 import './../../../styles/main.scss'
 
