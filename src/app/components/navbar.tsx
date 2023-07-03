@@ -1,5 +1,5 @@
 // @ts-ignore
-import  Link from "next/Link";
+import {Link} from "next/Link";
 
 import {FcHome} from "react-icons/fc";
 import {RxPerson} from "react-icons/rx";
