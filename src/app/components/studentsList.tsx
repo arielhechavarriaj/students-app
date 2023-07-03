@@ -16,20 +16,36 @@ import {FaUserEdit} from "react-icons/fa";
 import {MdGroupRemove} from "react-icons/md";
 import editStudent from "@/app/students/editStudent/[id]/page";
 
-export default function StudentsList() {
-    let data: any[] = [{
-        id: 0,
-        selected:false,
-        first_name: 'joe',
-        last_name: 'frext',
-        email: 'joeFrext@gmail.comjoeFrext@gmail.com',
-        age: '25',
-        grade: '1st',
-    },];
+const getStudents = async () => {
+    try {
+       const res= await fetch('http://localhost:3000/api/students',{
+            cache:"no-store"
+        })
+
+        if(!res.ok){
+throw  new Error('Failed to load students')
+        }
+        return res.json();
+    }
+    catch (e) {
+        console.log("Error loading Students!",e);
+    }
+
+
+
+}
+
+
+export default async function StudentsList() {
+    let students=[]
+students  = await getStudents();
 
 
     // @ts-ignore
-    return (<section className={'container-table'}>
+    // @ts-ignore
+    return (
+
+        <section className={'container-table'}>
             <div className={'menu'}>
 
                 <p>Manage Students</p>
@@ -62,7 +78,9 @@ export default function StudentsList() {
                 </tr>
                 </thead>
                 <tbody>
-                {data.map((student) => (<tr key={student.id}>
+
+
+              {students.map((student:any) => (<tr key={student.id}>
                     <th><input name="select_" value="1" type="checkbox" checked={student.selected}/></th>
 
                         <td>{student.first_name}</td>
@@ -74,11 +92,12 @@ export default function StudentsList() {
                             <div className={'button-actions'}>
                                 <RemoveBtn/>
 
-                                <Link href="/students/editStudent/123" style={{textDecoration:'none', paddingTop:5+'px'}} ><FaUserEdit size={24} color={'#375280'}/></Link>
+                                <Link href={`/students/editStudent/${student._id}`} style={{textDecoration:'none', paddingTop:5+'px'}} ><FaUserEdit size={24} color={'#375280'}/></Link>
 
                             </div>
                         </td>
                     </tr>))}
+
                 </tbody>
             </table>
 
