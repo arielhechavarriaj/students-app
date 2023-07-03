@@ -1,5 +1,5 @@
 // @ts-ignore
-import {Link} from "next/Link";
+import Link from "next/Link";
 import RemoveBtn from "@/app/components/removeBtn";
 import {HiPencilAlt} from "react-icons/hi";
 import {router} from "next/client";
