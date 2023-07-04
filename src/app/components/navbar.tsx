@@ -1,6 +1,4 @@
-// @ts-ignore
-import Link from "next/Link";
-
+import Link from 'next/link';
 import {FcHome} from "react-icons/fc";
 import {RxPerson} from "react-icons/rx";
 import {BiTask} from "react-icons/bi";

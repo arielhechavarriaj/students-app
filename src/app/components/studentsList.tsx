@@ -1,5 +1,5 @@
-// @ts-ignore
-import Link from "next/Link";
+
+
 import RemoveBtn from "@/app/components/removeBtn";
 import {HiPencilAlt} from "react-icons/hi";
 import {router} from "next/client";
@@ -15,6 +15,7 @@ import {BiEdit, BiEditAlt} from "react-icons/bi";
 import {FaUserEdit} from "react-icons/fa";
 import {MdGroupRemove} from "react-icons/md";
 import editStudent from "@/app/students/editStudent/[id]/page";
+import Link from "next/link";
 
 const getStudents = async () => {
     try {
